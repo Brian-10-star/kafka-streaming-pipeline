@@ -1,0 +1,54 @@
+2026-05-11 18:12:00,966 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-05-11 18:12:01,724 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <checking_api_versions_recv> [IPv6 ('::1', 9092, 0, 0)]>: Broker version identified as 2.6
+2026-05-11 18:12:01,725 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-05-11 18:12:01,726 [INFO] Updating subscribed topics to: ('mpesa_transactions',)
+2026-05-11 18:12:01,855 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-05-11 18:12:01,856 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-05-11 18:12:01,857 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2026-05-11 18:12:01,992 [INFO] Coordinator for group/mpesa-consumer-group is BrokerMetadata(nodeId='coordinator-1', host='localhost', port=9092, rack=None)
+2026-05-11 18:12:01,993 [INFO] Discovered coordinator coordinator-1 for group mpesa-consumer-group
+2026-05-11 18:12:01,993 [INFO] Starting new heartbeat thread
+2026-05-11 18:12:01,996 [INFO] Revoking previously assigned partitions set() for group mpesa-consumer-group
+2026-05-11 18:12:01,996 [INFO] Failed to join group mpesa-consumer-group: NodeNotReadyError: coordinator-1
+2026-05-11 18:12:01,997 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-05-11 18:12:01,998 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-05-11 18:12:02,099 [INFO] (Re-)joining group mpesa-consumer-group
+2026-05-11 18:12:02,267 [INFO] Received member id kafka-python-2.3.1-aca73507-5f74-4d6e-9ae7-91cfdf8b3069 for group mpesa-consumer-group; will retry join-group
+2026-05-11 18:12:02,268 [INFO] Failed to join group mpesa-consumer-group: [Error 79] MemberIdRequiredError
+2026-05-11 18:12:02,269 [INFO] (Re-)joining group mpesa-consumer-group
+2026-05-11 18:12:05,379 [INFO] Successfully joined group mpesa-consumer-group <Generation 10 (member_id: kafka-python-2.3.1-aca73507-5f74-4d6e-9ae7-91cfdf8b3069, protocol: range)>
+2026-05-11 18:12:05,384 [INFO] Elected group leader -- performing partition assignments using range
+2026-05-11 18:12:05,557 [INFO] Updated partition assignment: [TopicPartition(topic='mpesa_transactions', partition=0)]
+2026-05-11 18:12:05,557 [INFO] Setting newly assigned partitions {TopicPartition(topic='mpesa_transactions', partition=0)} for group mpesa-consumer-group
+2026-05-11 18:16:09,046 [INFO] Stopping heartbeat thread
+2026-05-11 18:16:09,049 [INFO] Leaving consumer group mpesa-consumer-group (member kafka-python-2.3.1-aca73507-5f74-4d6e-9ae7-91cfdf8b3069).
+2026-05-11 18:16:09,076 [INFO] LeaveGroup request for group mpesa-consumer-group returned successfully
+2026-05-11 18:16:09,077 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2026-05-11 18:16:09,078 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2026-05-11 18:21:16,008 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-05-11 18:21:16,111 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <checking_api_versions_recv> [IPv6 ('::1', 9092, 0, 0)]>: Broker version identified as 2.6
+2026-05-11 18:21:16,112 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-05-11 18:21:16,113 [INFO] Updating subscribed topics to: ('mpesa_transactions',)
+2026-05-11 18:21:16,149 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-05-11 18:21:16,152 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-05-11 18:21:16,152 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=bootstrap-0 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2026-05-11 18:21:16,289 [INFO] Coordinator for group/mpesa-consumer-group is BrokerMetadata(nodeId='coordinator-1', host='localhost', port=9092, rack=None)
+2026-05-11 18:21:16,290 [INFO] Discovered coordinator coordinator-1 for group mpesa-consumer-group
+2026-05-11 18:21:16,294 [INFO] Starting new heartbeat thread
+2026-05-11 18:21:16,297 [INFO] Revoking previously assigned partitions set() for group mpesa-consumer-group
+2026-05-11 18:21:16,298 [INFO] Failed to join group mpesa-consumer-group: NodeNotReadyError: coordinator-1
+2026-05-11 18:21:16,302 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=localhost:9092 <connecting> [IPv6 ('::1', 9092, 0, 0)]>: connecting to localhost:9092 [('::1', 9092, 0, 0) IPv6]
+2026-05-11 18:21:16,308 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Connection complete.
+2026-05-11 18:21:16,410 [INFO] (Re-)joining group mpesa-consumer-group
+2026-05-11 18:21:16,479 [INFO] Received member id kafka-python-2.3.1-2fcacd3e-46e9-40fe-b934-eff8454059c1 for group mpesa-consumer-group; will retry join-group
+2026-05-11 18:21:16,480 [INFO] Failed to join group mpesa-consumer-group: [Error 79] MemberIdRequiredError
+2026-05-11 18:21:16,481 [INFO] (Re-)joining group mpesa-consumer-group
+2026-05-11 18:21:19,551 [INFO] Successfully joined group mpesa-consumer-group <Generation 12 (member_id: kafka-python-2.3.1-2fcacd3e-46e9-40fe-b934-eff8454059c1, protocol: range)>
+2026-05-11 18:21:19,557 [INFO] Elected group leader -- performing partition assignments using range
+2026-05-11 18:21:19,635 [INFO] Updated partition assignment: [TopicPartition(topic='mpesa_transactions', partition=0)]
+2026-05-11 18:21:19,638 [INFO] Setting newly assigned partitions {TopicPartition(topic='mpesa_transactions', partition=0)} for group mpesa-consumer-group
+2026-05-11 18:23:31,162 [INFO] Stopping heartbeat thread
+2026-05-11 18:23:31,166 [INFO] Leaving consumer group mpesa-consumer-group (member kafka-python-2.3.1-2fcacd3e-46e9-40fe-b934-eff8454059c1).
+2026-05-11 18:23:31,214 [INFO] LeaveGroup request for group mpesa-consumer-group returned successfully
+2026-05-11 18:23:31,216 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
+2026-05-11 18:23:31,221 [INFO] <BrokerConnection client_id=kafka-python-2.3.1, node_id=coordinator-1 host=localhost:9092 <connected> [IPv6 ('::1', 9092, 0, 0)]>: Closing connection. 
