@@ -1,12 +1,12 @@
 # Real-Time M-Pesa Streaming Pipeline
 
-A real-time streaming data pipeline built with Apache Kafka, Python, and PostgreSQL that simulates M-Pesa financial transactions flowing continuously from a producer through a message broker into a database — demonstrating the full producer → broker → consumer architecture used in production fintech systems.
+A real-time streaming data pipeline built with Apache Kafka, Python, and PostgreSQL that simulates M-Pesa financial transactions flowing continuously from a producer through a message broker into a database. It demonstrates the full producer → broker → consumer architecture used in production fintech systems.
 
 ---
 
 ## Background
 
-M-Pesa is East Africa's dominant mobile money platform, processing millions of transactions daily across Kenya, Tanzania, and beyond. In production, every Send Money, Pay Bill, Buy Goods, and Pochi la Biashara transaction must be captured, buffered, and persisted reliably — even under high load or partial system failure.
+M-Pesa is East Africa's dominant mobile money platform, processing millions of transactions daily across Kenya, Tanzania, and beyond. In production, every Send Money, Pay Bill, Buy Goods, and Pochi la Biashara transaction must be captured, buffered, and persisted reliably, even under high load or partial system failure.
 
 This project replicates that architecture at a small scale using Apache Kafka as the message broker, simulating one transaction per second with realistic Kenyan names and KES amounts, and storing every record in PostgreSQL with millisecond-level latency between generation and ingestion.
 
@@ -76,8 +76,8 @@ kafka-streaming-pipeline/
 CREATE TABLE transactions (
     id               SERIAL PRIMARY KEY,
     transaction_id   VARCHAR(50)    UNIQUE NOT NULL,  -- e.g. TXN-B70E1837AC
-    sender           VARCHAR(100)   NOT NULL,          -- Kenyan name
-    receiver         VARCHAR(100)   NOT NULL,          -- Kenyan name
+    sender           VARCHAR(100)   NOT NULL,          -- customer name
+    receiver         VARCHAR(100)   NOT NULL,          -- customer name
     amount           NUMERIC(10,2)  NOT NULL,          -- KES 50.00 to KES 50,000.00
     transaction_type VARCHAR(20)    NOT NULL,          -- Send Money | Buy Goods | Pay Bill | Withdraw | Pochi la Biashara
     timestamp        TIMESTAMP      NOT NULL,          -- When the transaction was generated

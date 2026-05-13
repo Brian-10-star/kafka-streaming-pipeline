@@ -13,10 +13,7 @@ KAFKA_BROKER = "localhost:9092"
 GROUP_ID = "mpesa-consumer-group"
 
 # --- Dead Letter Logger Setup ---
-# Any message that fails to insert into PostgreSQL gets written here
-# instead of being silently dropped. This is the "dead letter log".
-# logging.FileHandler writes to a file. The format includes timestamp,
-# log level, and the message so failures are fully traceable.
+# Any message that fails to insert into PostgreSQL gets written here instead of being silently dropped. This is the "dead letter log" .logging.FileHandler writes to a file. The format includes timestamp log level, and the message so failures are fully traceable.
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -25,7 +22,7 @@ logging.basicConfig(
         logging.StreamHandler()  # Also print to terminal
     ]
 )
-logging.getLogger("kafka").setLevel(logging.WARNING)  # It will suppress verbose Kafka logs
+logging.getLogger("kafka").setLevel(logging.WARNING)  # It will silence Kafka logs
 logger = logging.getLogger(__name__)
 
 # --- Metrics Tracking ---
@@ -115,7 +112,7 @@ try:
         txn = message.value
         metrics["total_received"] += 1
 
-        # Step 1: Validate the message before attempting any DB operation
+        # Step 1: Validate the message before attempting any db operation
         if not validate_message(txn):
             metrics["total_failed"] += 1
             logger.error(f"DEAD LETTER: Invalid message skipped: {txn}")
@@ -130,9 +127,7 @@ try:
         metrics["by_type"][txn_type] = metrics["by_type"].get(txn_type, 0) + 1
 
         # Step 4: Attempt database insert — wrapped in try/except
-        # If the insert fails for any reason (DB down, constraint violation,
-        # network issue), the error is logged and the pipeline keeps running.
-        # Without this, one bad insert crashes the entire consumer.
+        # If the insert fails for any reason (DB down, constraint violation, network issue), the error is logged and the pipeline keeps running. Without this, one bad insert will crash the entire consumer.
         try:
             cursor.execute("""
                 INSERT INTO transactions
