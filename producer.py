@@ -6,13 +6,13 @@ from datetime import datetime
 from kafka import KafkaProducer
 
 # Common Kenyan first and last names
-FIRST_NAMES = [
+KENYAN_FIRST_NAMES = [
     "Stacy", "Brian", "Carlton", "Mwangi", "Achieng", "Odhiambo", "Chebet", "Nathan", "Susan", "Naomi",
     "Kipchoge", "Amina", "Hassan", "Fatuma", "Baraka", "Zawadi", "Jabali", "Jeff", "Risper",
     "Makena", "Kariuki", "Otieno", "Adhiambo", "Mutua", "Wambui", "Michael", "David", "Paul"
 ]
 
-LAST_NAMES = [
+KENYAN_LAST_NAMES = [
     "Kamau", "Ochieng", "Kipkorir", "Muthoni", "Waweru", "Njoroge", "Auma", "Mbugua", "Nduati",
     "Owino", "Chepkemoi", "Mugo", "Gitonga", "Onyango", "Rotich", "Karanja", "Mwangi", "Mutinda",
     "Simiyu", "Njenga", "Ogola", "Kimani", "Cheruiyot", "Ndegwa", "Katiku", "Ondieki"
@@ -23,16 +23,16 @@ KAFKA_BROKER = "localhost:9092"
 
 TRANSACTION_TYPES = ["Send Money", "Buy Goods", "Pay Bill", "Withdraw", "Pochi la Biashara"]
 
-def customer_name():
-    """Generating a realistic Kenyan full name."""
-    return f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
+def kenyan_name():
+    """Generate a realistic Kenyan full name."""
+    return f"{random.choice(KENYAN_FIRST_NAMES)} {random.choice(KENYAN_LAST_NAMES)}"
 
 def generate_transaction():
-    """Generating one realistic M-Pesa transaction as a dictionary."""
+    """Generate one realistic M-Pesa transaction as a dictionary."""
     return {
         "transaction_id": f"TXN-{uuid.uuid4().hex[:10].upper()}",
-        "sender": customer_name(),
-        "receiver": customer_name(),
+        "sender": kenyan_name(),
+        "receiver": kenyan_name(),
         "amount": round(random.uniform(50, 50000), 2),
         "transaction_type": random.choice(TRANSACTION_TYPES),
         "timestamp": datetime.now().isoformat()
